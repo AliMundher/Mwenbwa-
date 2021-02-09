@@ -1,0 +1,19 @@
+.navbar-light .navbar-nav .nav-link:hover {
+    color: red!important;
+}
+
+.btn_register, .btn-login {
+    border: 2px solid red;
+    width: 105px;
+    text-align: center;
+    padding: 8px;
+    font-size: 1.1em;
+}
+
+.btn-login {
+    border: 2px solid green;
+}
+
+.nav-item.green:hover .btn-login {
+    color: green!important
+}

@@ -1,25 +1,33 @@
 
 import './App.css';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from './components/Nav/nav'
+import Login from './components/Login/Login'
+import Home from './components/Home/home'
+import Register from './components/Register/register'
+import { BrowserRouter, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+  render() {
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <Nav />
+          <div className="container">
+            <Route exact path="/" component={Home} />
+            <Route exact path="/Login" component={Login} />
+            <Route exact path="/Register" component={Register} />
+          </div>
+        </BrowserRouter>
+
+      </div>
+    )
+  }
+
+
 }
 
 export default App;

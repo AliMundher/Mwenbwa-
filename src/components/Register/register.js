@@ -3,10 +3,10 @@ import axios from 'axios';
 
 function Register(props) {
 
-    const [fullname, setFullName] = useState();
-    const [username, setUserName] = useState();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [fullname, setFullName] = useState('');
+    const [username, setUserName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     function fun_FullName(e) {
 
@@ -37,6 +37,8 @@ function Register(props) {
         setEmail('');
         setPassword('');
 
+        // <h1>Created User Name</h1>
+
     }
 
     return (
@@ -48,22 +50,22 @@ function Register(props) {
                         <div className="form-group">
                             <label>FullName</label>
                             <input type="text" className="form-control" value={fullname}
-                                onChange={fun_FullName} name="fullname" />
+                                onChange={fun_FullName} name="fullname" required />
                         </div>
                         <div className="form-group">
                             <label>UserName</label>
                             <input type="text" className="form-control" value={username}
-                                onChange={fun_userName} name="username" />
+                                onChange={fun_userName} name="username" required />
                         </div>
                         <div className="form-group">
                             <label>Email</label>
                             <input type="email" className="form-control" value={email}
-                                onChange={fun_email} name="email" />
+                                onChange={fun_email} name="email" required />
                         </div>
                         <div className="form-group">
                             <label>Password</label>
                             <input type="password" className="form-control" value={password}
-                                onChange={fun_password} name="password" />
+                                onChange={fun_password} name="password" required />
                         </div>
 
                         <button type="submit" className="btn btn-primary">Resgister</button>

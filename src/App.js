@@ -18,8 +18,8 @@ class App extends React.Component {
           <Nav />
           <div className="container">
             <Route exact path="/" component={Home} />
-            <Route exact path="/Login" component={Login} />
-            <Route exact path="/Register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
           </div>
         </BrowserRouter>
 

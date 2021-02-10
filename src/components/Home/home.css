@@ -1,0 +1,36 @@
+.my_mt {
+    margin-top: 10%;
+}
+
+.welcome {
+    font-size: 1.1em;
+}
+
+.tree {
+    color: #f46f20;
+    font-size: 2em;
+    margin: 13px 0
+}
+
+.game {
+    color: #f46f20;
+    font-size: 1.3em;
+    font-weight: normal;
+}
+
+.btn_home {
+    border: 2px solid #f46f20;
+    width: 140px;
+    padding: 10px;
+    background-color: transparent;
+    margin-top: 3%;
+    transition: all .3s ease-in-out;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.btn_home:hover {
+    background-color: #f46f20;
+    color: #fff;
+}

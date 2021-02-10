@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
+import "./register.css"
+
+
 
 function Register(props) {
-
     const [fullname, setFullName] = useState('');
     const [username, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    // const [output, setOutput] = useState([]);
 
     function fun_FullName(e) {
 
@@ -29,7 +32,7 @@ function Register(props) {
             email: email,
             password: password
         }
-        axios.post("http://localhost:4000/app/signup", all_var)
+        axios.post("http://localhost:4000/app/register", all_var)
             .then(res => console.log(res.data))
 
         setFullName('');
@@ -41,11 +44,31 @@ function Register(props) {
 
     }
 
+    // useEffect(() => {
+    //     axios.get("http://localhost:4000/app/register")
+    //         .then(res => {
+    //             console.log(res);
+    //             setOutput(res.data)
+    //         })
+    //         .catch(error => console.log(error))
+    // })
+
+
     return (
         <div>
-            <h2 className="mt-5 text-capitalize">register</h2>
+            <h2 className="mt-5 text-capitalize register">register</h2>
             <div className="row mt-5">
                 <div className="col-12 col-md-6">
+
+                    {/* <ul>
+                        list error
+                        {
+                            output.length ?
+                                output.map(i => <li>{i}</li>) : "  nullll"
+
+                        }
+                    </ul> */}
+
                     <form onSubmit={fun_onSubmit}>
                         <div className="form-group">
                             <label>FullName</label>
@@ -67,8 +90,7 @@ function Register(props) {
                             <input type="password" className="form-control" value={password}
                                 onChange={fun_password} name="password" required />
                         </div>
-
-                        <button type="submit" className="btn btn-primary">Resgister</button>
+                        <button type="submit" className="btn_home">Resgister</button>
                     </form>
                 </div>
             </div>

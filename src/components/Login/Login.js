@@ -1,43 +1,46 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-
+import "./login.css"
 
 function Login() {
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const [output, setOutput] = useState('');
 
     // Submit Function
     function fun_submit(e) {
         e.preventDefault();
-        const login = {
+        const userLogin = {
             userName: username,
             password: password
         }
-        axios.post("http://localhost:4000/app/login", login)
+        axios.post("http://localhost:4000/app/login", userLogin)
             .then(res => console.log(res.data))
             .catch(error => {
                 console.log(error)
-            })
+            });
 
         setUserName('');
         setPassword('');
     }
 
-    // UserName Function
-    // function fun_userName(e) {
-    //     setUserName(e.target.value)
-    // }
+    useEffect(() => {
+        axios.get("http://localhost:4000/app/login")
+            .then(res => {
+                console.log(res);
+                setOutput(res.data.msg)
+            })
+            .catch(error => console.log(error))
+    })
 
-    // Password Function
-    // function fun_password(e) {
-    //     setPassword(e.target.value)
-    // }
+
 
     return (
         <div>
-            <h2 className="mt-5 text-capitalize">log in</h2>
+            <h2 className="mt-5 text-capitalize log_in">log in</h2>
             <div className="row mt-5">
                 <div className="col-12 col-md-6">
+                    <p>{output}</p>
                     <form onSubmit={fun_submit}>
                         <div className="form-group">
                             <label>UserName</label>
@@ -50,7 +53,7 @@ function Login() {
                             <input type="password" className="form-control" required
                                 onChange={(e) => setPassword(e.target.value)} name="password" />
                         </div>
-                        <button type="submit" className="btn btn-primary">Log In</button>
+                        <button type="submit" className="btn_home">Log In</button>
                     </form>
                 </div>
             </div>

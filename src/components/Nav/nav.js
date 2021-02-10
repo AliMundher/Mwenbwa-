@@ -3,11 +3,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./nav.css"
 
+
+
 function Nav() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
-                <Link to="/" className="navbar-brand">tree</Link>
+                <Link to="/" className="navbar-brand">
+                    <div>
+                        <img src="images/logo.png" className="img-fluid img_logo" alt="photo" />
+                        <span className="logo_text display-4">tr<span className="ee">ee
+                        <span className="point"></span> </span></span>
+                    </div>
+                </Link>
                 <button className="navbar-toggler" data-toggle="collapse" data-target="#navbar">
                     <span className="navbar-toggler-icon"></span>
                 </button>

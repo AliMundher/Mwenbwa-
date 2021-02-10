@@ -3,7 +3,7 @@
 }
 
 .btn_register, .btn-login {
-    border: 2px solid red;
+    border: 2px solid #f46f20;
     width: 105px;
     text-align: center;
     padding: 8px;
@@ -11,9 +11,39 @@
 }
 
 .btn-login {
-    border: 2px solid green;
+    border: 2px solid #f46f20;
 }
 
 .nav-item.green:hover .btn-login {
     color: green!important
+}
+
+.img_logo {
+    width: 70px;
+    height: 70px
+}
+
+.bg-light {
+    background-color: transparent!important;
+}
+
+.logo_text {
+    /* font-size: 2em;
+    font-weight: bold; */
+    text-transform: capitalize;
+    position: relative;
+    left: -29px;
+    top: 23px;
+}
+
+.ee {
+    color: #f46f20
+}
+
+.point {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #f46f20;
 }

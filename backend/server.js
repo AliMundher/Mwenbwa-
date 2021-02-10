@@ -17,8 +17,7 @@ mongoose.connect(process.env.DATABASE_ACCESS, () => console.log('Database Connec
 // End Connect to MongoDB 
 
 
+app.listen(4000, () => console.log('Server is Up and Running..'))
 app.use(express.json());
 app.use(cors());
 app.use('/app', routerUrl);
-
-app.listen(4000, () => console.log('Server is Up and Running..'))

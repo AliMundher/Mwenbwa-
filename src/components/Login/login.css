@@ -1,0 +1,15 @@
+.log_in {
+    position: relative;
+    color: #5f2529
+}
+
+.log_in:after {
+    content: "";
+    position: absolute;
+    top: 35px;
+    left: 1px;
+    background-color: #f46f20;
+    width: 8%;
+    height: 7px;
+    z-index: -1;
+}

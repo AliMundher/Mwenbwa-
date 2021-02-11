@@ -44,11 +44,11 @@ function Register(props) {
 
     }
 
-    // useEffect(() => {
-    //     axios.get("http://localhost:4000/app/register")
+    // useEffect(async () => {
+    //     await axios.get("http://localhost:4000/app/register")
     //         .then(res => {
     //             console.log(res);
-    //             setOutput(res.data)
+    //             setOutput(res.data.data)
     //         })
     //         .catch(error => console.log(error))
     // })
@@ -60,35 +60,35 @@ function Register(props) {
             <div className="row mt-5">
                 <div className="col-12 col-md-6">
 
-                    {/* <ul>
+                    {/* {<ul>
                         list error
                         {
                             output.length ?
                                 output.map(i => <li>{i}</li>) : "  nullll"
 
                         }
-                    </ul> */}
+                    </ul>} */}
 
                     <form onSubmit={fun_onSubmit}>
                         <div className="form-group">
                             <label>FullName</label>
                             <input type="text" className="form-control" value={fullname}
-                                onChange={fun_FullName} name="fullname" required />
+                                onChange={fun_FullName} name="fullname" />
                         </div>
                         <div className="form-group">
                             <label>UserName</label>
                             <input type="text" className="form-control" value={username}
-                                onChange={fun_userName} name="username" required />
+                                onChange={fun_userName} name="username" />
                         </div>
                         <div className="form-group">
                             <label>Email</label>
                             <input type="email" className="form-control" value={email}
-                                onChange={fun_email} name="email" required />
+                                onChange={fun_email} name="email" />
                         </div>
                         <div className="form-group">
                             <label>Password</label>
                             <input type="password" className="form-control" value={password}
-                                onChange={fun_password} name="password" required />
+                                onChange={fun_password} name="password" />
                         </div>
                         <button type="submit" className="btn_home">Resgister</button>
                     </form>

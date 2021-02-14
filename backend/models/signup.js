@@ -8,15 +8,18 @@ const SignUpTemplate = new mongoose.Schema({
     },
     userName: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        minlength: 5
     },
     date: {
         type: Date,

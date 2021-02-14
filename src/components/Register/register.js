@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import "./register.css"
+import "./register.css";
+import { useHistory } from "react-router-dom";
 
 
 
@@ -9,10 +10,10 @@ function Register(props) {
     const [username, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // const [output, setOutput] = useState([]);
+    const [error, setError] = useState();
 
+    const history = useHistory();
     function fun_FullName(e) {
-
         setFullName(e.target.value);
     }
     function fun_userName(e) {
@@ -24,51 +25,47 @@ function Register(props) {
     function fun_password(e) {
         setPassword(e.target.value);
     }
-    function fun_onSubmit(e) {
+
+    const fun_onSubmit = (e) => {
         e.preventDefault();
-        const all_var = {
-            fullName: fullname,
-            userName: username,
-            email: email,
-            password: password
+        try {
+            const all_var = {
+                fullName: fullname,
+                userName: username,
+                email: email,
+                password: password
+            }
+            axios.post("http://localhost:4000/app/register", all_var)
+                .then(res => console.log(res.data))
+                .catch(error => {
+                    console.log(error)
+                });
+            // history.push('/');
+
+            setFullName('');
+            setUserName('');
+            setEmail('');
+            setPassword('');
+
         }
-        axios.post("http://localhost:4000/app/register", all_var)
-            .then(res => console.log(res.data))
-
-        setFullName('');
-        setUserName('');
-        setEmail('');
-        setPassword('');
-
-        // <h1>Created User Name</h1>
-
+        catch (error) {
+            error.response.data.msg && setError(error.response.data.msg)
+        }
     }
-
-    // useEffect(async () => {
-    //     await axios.get("http://localhost:4000/app/register")
-    //         .then(res => {
-    //             console.log(res);
-    //             setOutput(res.data.data)
-    //         })
-    //         .catch(error => console.log(error))
-    // })
-
 
     return (
         <div>
             <h2 className="mt-5 text-capitalize register">register</h2>
             <div className="row mt-5">
                 <div className="col-12 col-md-6">
+                    {
+                        error ?
+                            <div class="alert alert-danger text-capitalize font-weight-bold" role="alert">
+                                {error}
+                            </div>
+                            : ""
 
-                    {/* {<ul>
-                        list error
-                        {
-                            output.length ?
-                                output.map(i => <li>{i}</li>) : "  nullll"
-
-                        }
-                    </ul>} */}
-
+                    }
                     <form onSubmit={fun_onSubmit}>
                         <div className="form-group">
                             <label>FullName</label>

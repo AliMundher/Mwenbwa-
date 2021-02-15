@@ -6,8 +6,8 @@ function Home() {
     return (
         <div className="row my_mt">
             <div className="col-12 col-md-6">
-                <h4 className="welcome text-capitalize">welcome to our site</h4>
-                <h3 className="tree text-capitalize">tree</h3>
+                <h4 className="welcome text-capitalize">welcome to our game</h4>
+                <h3 className="tree text-capitalize">tree game</h3>
                 <p className="game text-capitalize">Our favorite game</p>
                 <p>Le lorem ipsum est, en imprimerie, une suite de mots sans signification
                 utilisée à titre provisoire pour calibrer une mise en page, le texte définitif

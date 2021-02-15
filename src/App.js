@@ -1,10 +1,10 @@
 
-
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from './components/Nav/nav'
 import Login from './components/Login/Login'
 import Home from './components/Home/home'
+import MapGame from './components/MapGame/mapgame'
 import Register from './components/Register/register'
 import { BrowserRouter, Route } from 'react-router-dom';
 import axios from "axios";
@@ -42,26 +42,27 @@ function App() {
     checkLogin();
 
   }, []);
-
-
-
   return (
-    <div className="App">
-      <BrowserRouter>
-        <UserContext.Provider value={{ userData, setUserData }}>
-          <Nav />
-          <div className="container">
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-          </div>
-        </UserContext.Provider>
-      </BrowserRouter>
+    <>
+      <div className="App">
+        <BrowserRouter>
+          <UserContext.Provider value={{ userData, setUserData }}>
+            <Nav />
+            <div className="container">
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/register" component={Register} />
+            </div>
+          </UserContext.Provider>
+        </BrowserRouter>
+        {/* Check if User Log in Show the MapGame */}
+        {
+          userData.user ? <MapGame /> : ""
+        }
 
-    </div>
-  )
-
-
+      </div>
+    </>
+  );
 
 }
 

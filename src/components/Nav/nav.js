@@ -24,7 +24,7 @@ function Nav() {
             <div className="container">
                 <Link to="/" className="navbar-brand">
                     <div>
-                        <img src="images/logo.png" className="img-fluid img_logo" alt="photo" />
+                        <img src="images/logo1.png" className="img-fluid img_logo" alt="photo" />
                         <span className="logo_text display-4">tr<span className="ee">ee
                         <span className="point"></span> </span></span>
                     </div>

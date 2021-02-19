@@ -4,7 +4,8 @@
     position: fixed;
     left: 0;
     top: 0;
-    border: 2px solid #eee
+    border: 2px solid #eee;
+    z-index: 200;
 }
 
 .img_profile {
@@ -24,10 +25,10 @@
     text-transform: capitalize;
 }
 
-.infos {
+.infos, .buy p {
     font-size: 1em;
     text-align: center;
-    color: #f46f20;
+    color: #559434;
 }
 
 .img_tree {
@@ -37,7 +38,8 @@
 
 .score {
     position: relative;
-    top: 14px
+    top: 14px;
+    color: #559434;
 }
 
 .setting i {
@@ -47,6 +49,29 @@
     bottom: 30px;
     left: 78px;
     font-size: 1.5em;
-    color: #f46f20;
+    color: #559434;
     cursor: pointer;
+}
+
+.buy, .trees {
+    border: 2px solid #559434;
+    padding: 10px 10px;
+    border-radius: 15px;
+}
+
+.buy p {
+    text-transform: capitalize;
+}
+
+.buy button {
+    position: relative;
+    border: 2px solid #559434;
+    color: #559434;
+    width: 120px;
+    padding: 8px;
+    background-color: transparent;
+    font-weight: bold;
+    text-transform: capitalize;
+    cursor: pointer;
+    z-index: 150;
 }

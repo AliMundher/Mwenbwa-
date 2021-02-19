@@ -27,14 +27,14 @@ router.post("/register", async (req, res, next) => {
             return res.status(400).json({ msg: "An Account already exists" });
 
         // Encrypt a Password
-        const salt = await bcrypt.genSalt();
-        const passwordHash = await bcrypt.hash(password, salt);
+        // const salt = await bcrypt.genSalt();
+        // const passwordHash = await bcrypt.hash(password, salt);
 
         const newUser = new signupCopy({
             fullName: fullName,
             userName: userName,
             email: email,
-            password: passwordHash,
+            password: password,
         });
         // Save The User In Database
         const saveUser = await newUser.save();
@@ -106,6 +106,7 @@ router.delete("/delete", auth, async (req, res) => {
 
 });
 
+// Check if
 router.post("/tokenValid", async (req, res) => {
     try {
         const token = req.header('x-auth-token');
@@ -127,7 +128,7 @@ router.post("/tokenValid", async (req, res) => {
     }
 });
 
-
+// Get Only One User Who he do Log i
 router.get('/', auth, async (req, res) => {
     const user = await signupCopy.findById(req.user);
     res.json(user);

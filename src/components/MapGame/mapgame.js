@@ -1,24 +1,56 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Slider from '../Slider/slider'
-// import UserContext from "../../context/UserContext";
+import {
+    GoogleMap,
+    useLoadScript,
+    Marker,
+    InfoWindow
+} from "@react-google-maps/api";
+import { formateRelative } from "date-fns";
+import MapStyle from "./mapstyle";
 
 
 
-function MapGame() {
-    // const { userData } = useContext(UserContext);
+
+const libraries = ["places"];
+const containerStyle = {
+    width: "100vw",
+    height: "100vh",
+};
+const center = {
+    lat: 50.643909,
+    lng: 5.571560,
+};
+const options = {
+    styles: MapStyle
+}
+
+function MapGame(props) {
+
+    const { isLoaded, loadError } = useLoadScript({
+        googleMapsApiKey: ('AIzaSyDkn_6-4_JcJa7IY41JBIi0ARh7whc-iAI'),
+        libraries,
+    });
+    if (loadError) return "Error loading map";
+    if (!isLoaded) return "loading map";
+
     return (
-
         <div>
-            <Slider />
+            <Slider user={props.user} />
             <div className="row">
                 <div className="col-12">
                     <div className="container">
-                        <h2 className="ml-4">map</h2>
-
+                        <GoogleMap
+                            mapContainerStyle={containerStyle}
+                            zoom={8}
+                            center={center}
+                            options={options}
+                        ></GoogleMap>
                     </div>
                 </div>
+
             </div>
-        </div>
+        </div >
     )
 }
 

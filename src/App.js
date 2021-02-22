@@ -15,6 +15,7 @@ import UserContext from "./context/UserContext";
 
 function App() {
 
+
   const [userData, setUserData] = useState({
     token: undefined,
     user: undefined,
@@ -65,6 +66,7 @@ function App() {
       {
         userData.user ? (
           <>
+
             <MapGame user={userData.user.userName} />
 
           </>

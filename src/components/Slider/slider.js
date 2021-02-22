@@ -1,18 +1,12 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
 import "./slider.css";
 
 
-
 function Slider(props) {
-    // const history = useHistory();
-
     const funBuy = () => {
-        // history.push("/buy");
         window.open("/buy", "_self");
     }
     const funSetting = () => {
-        // history.push("/setting");
         window.open("/setting", "_self");
     }
 

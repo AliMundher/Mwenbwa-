@@ -1,0 +1,51 @@
+.main_buy {
+    position: fixed;
+    top: 12%;
+    left: 14%;
+    width: 85%;
+    height: 83%;
+    z-index: 100;
+    background-color: rgb(194 194 194 / 81%);
+    border-radius: 10px;
+}
+
+.my_row_buy>div {
+    background-color: #fff;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.close {
+    position: relative;
+    left: -2%;
+    top: 2%;
+    font-size: 2em;
+    color: red;
+    cursor: pointer;
+}
+
+.buy_title {
+    text-transform: capitalize;
+    font-size: 1.4em;
+}
+
+.boxes {
+    display: flex;
+}
+
+.boxes>div {
+    flex: 1;
+}
+
+.boxes .name_tree, .boxes .points, .icon {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #777;
+    line-height: 18px
+}
+
+.all_boxes img {
+    width: 100px;
+    height: 100px
+}

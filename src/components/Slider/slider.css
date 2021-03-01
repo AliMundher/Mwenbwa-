@@ -1,0 +1,77 @@
+.slider {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border: 2px solid #eee;
+    z-index: 200;
+}
+
+.img_profile {
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    margin: 15px auto;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    padding: 3px
+}
+
+.name_profile {
+    font-size: 1em;
+    margin: 15px 0;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.infos, .buy p {
+    font-size: 1em;
+    text-align: center;
+    color: #559434;
+}
+
+.img_tree {
+    width: 40px;
+    height: 40px
+}
+
+.score {
+    position: relative;
+    top: 14px;
+    color: #559434;
+}
+
+.setting i {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    bottom: 30px;
+    left: 78px;
+    font-size: 1.5em;
+    color: #559434;
+    cursor: pointer;
+}
+
+.buy, .trees {
+    border: 2px solid #559434;
+    padding: 10px 10px;
+    border-radius: 15px;
+}
+
+.buy p {
+    text-transform: capitalize;
+}
+
+.buy button {
+    position: relative;
+    border: 2px solid #559434;
+    color: #559434;
+    width: 120px;
+    padding: 8px;
+    background-color: transparent;
+    font-weight: bold;
+    text-transform: capitalize;
+    cursor: pointer;
+    z-index: 150;
+}

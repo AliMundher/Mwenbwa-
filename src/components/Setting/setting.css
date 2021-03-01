@@ -1,0 +1,47 @@
+.main_setting {
+    position: fixed;
+    top: 12%;
+    left: 21%;
+    width: 70%;
+    height: 83%;
+    z-index: 100;
+    background-color: rgb(190 190 190 / 81%);
+    border-radius: 10px;
+}
+
+.exit {
+    position: relative;
+    left: 95%;
+    top: 2%;
+    font-size: 2em;
+    color: red;
+    cursor: pointer;
+}
+
+.u_profile {
+    font-size: 1.4em;
+    position: relative;
+}
+
+.u_profile:before {
+    content: "";
+    position: absolute;
+    top: 19px;
+    left: 19em;
+    background-color: #777;
+    width: 19%;
+    height: 7px;
+    z-index: -50;
+}
+
+.btn_update {
+    border: 2px solid green;
+    width: 120px;
+    padding: 7px;
+    background-color: transparent;
+    color: green
+}
+
+.email, .username, .re-password, .password {
+    border: 2px solid #fff!important;
+}

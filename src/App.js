@@ -15,7 +15,6 @@ import UserContext from "./context/UserContext";
 
 function App() {
 
-
   const [userData, setUserData] = useState({
     token: undefined,
     user: undefined,

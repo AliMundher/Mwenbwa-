@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import $ from "jquery";
 import "./setting.css";
 
 
 const setting = () => {
 
-    const [isTrue, setIsTrue] = useState(false);
+    // const [isTrue, setIsTrue] = useState(false);
 
     useEffect(() => {
         $('.exit').on('click', () => {

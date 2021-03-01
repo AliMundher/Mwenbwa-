@@ -1,8 +1,7 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
 import "./register.css";
 import { useHistory } from "react-router-dom";
-import UserContext from "../../context/UserContext";
 
 
 
@@ -12,7 +11,6 @@ function Register(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState();
-    const { setUserData } = useContext(UserContext);
     const history = useHistory();
 
     function fun_FullName(e) {
